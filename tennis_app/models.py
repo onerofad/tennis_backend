@@ -6,6 +6,8 @@ class Signup (models.Model):
     dob =   models.DateField()
     email = models.CharField(max_length=255)
     password = models.CharField(max_length=255, default="")
+    nationality = models.CharField(max_length=255, default="")
+
 
 
     def __str__(self):
