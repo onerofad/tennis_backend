@@ -142,7 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
    'http://localhost:3000',
-   "https://tennis-tournament.vercel.app/"
+   "https://tennis-tournament.vercel.app"
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
