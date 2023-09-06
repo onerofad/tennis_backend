@@ -16,8 +16,6 @@ class PlayerRanking(models.Model):
     firstname = models.ForeignKey(Signup, on_delete=models.CASCADE, to_field="fname")
     points = models.IntegerField()
 
-    def __str__(self):
-        return self.firstname
     
 
 
