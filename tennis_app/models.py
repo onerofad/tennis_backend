@@ -14,6 +14,9 @@ class PlayerRanking (models.Model):
     last_name = models.ForeignKey(Signup, on_delete=models.CASCADE, to_field="lname", related_name='last_name')
     points = models.IntegerField()
 
+class Profile (models.Model):
+    profile= models.CharField(max_length=255)
+
 
 
 

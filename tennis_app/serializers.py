@@ -9,4 +9,4 @@ class SignupSerializer(serializers.ModelSerializer):
 class PlayerRankingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Signup
-        fields = ('id', 'firstname', 'lastname', 'points')
+        fields = ('id', 'first_name', 'last_name', 'points')
