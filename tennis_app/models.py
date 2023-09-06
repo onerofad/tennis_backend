@@ -14,7 +14,9 @@ class Signup (models.Model):
     
 class PlayerRanking(models.Model):
     firstname = models.ForeignKey(Signup, on_delete=models.CASCADE, to_field="fname")
+    league = models.enums{'premier league', 'governors cup', 'chairmans cup'}
     points = models.IntegerField()
+
 
     
 
