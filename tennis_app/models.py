@@ -11,23 +11,13 @@ class Signup (models.Model):
 
     def __str__(self):
         return self.fname
-
-class PlayerRanking (models.Model):
-    first_name = models.ForeignKey(Signup, on_delete=models.CASCADE, to_field="fname", related_name='first_name')
-    last_name = models.ForeignKey(Signup, on_delete=models.CASCADE, to_field="lname", related_name='last_name')
+    
+class PlayerRanking(models.Model):
+    firstname = models.ForeignKey(Signup, on_delete=models.CASCADE, to_field="fname")
     points = models.IntegerField()
 
     def __str__(self):
-        return self.first_name
-
-class Profile (models.Model):
-    profile= models.CharField(max_length=255)
-
-
-
-
-
-    def __str__(self):
-        return self.fname
+        return self.firstname
+    
 
 

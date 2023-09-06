@@ -1,12 +1,8 @@
 from rest_framework import serializers
-from .models import Signup, PlayerRanking
+from .models import Signup
 
 class SignupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Signup
         fields = ('id', 'fname', 'lname', 'dob', 'email', 'password', 'nationality', 'handbat')
 
-class PlayerRankingSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PlayerRanking
-        fields = ('id', 'first_name', 'last_name', 'points')
