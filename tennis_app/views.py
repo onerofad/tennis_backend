@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Signup
+from .models import Signup, PlayerRanking
 from .serializers import SignupSerializer, PlayerRankingSerializer
 
 class SignupView(viewsets.ModelViewSet):
@@ -8,7 +8,7 @@ class SignupView(viewsets.ModelViewSet):
     serializer_class = SignupSerializer
 
 class PlayerRankingView(viewsets.ModelViewSet):
-    queryset = Signup.objects.all()
+    queryset = PlayerRanking.objects.all()
     serializer_class = PlayerRankingSerializer
 
 
