@@ -8,7 +8,7 @@ class SignupView(viewsets.ModelViewSet):
     serializer_class = SignupSerializer
 
 class PlayerRankingView(viewsets.ModelViewSet):
-    queryset = PlayerRanking.objects.all().order_by("points")
+    queryset = PlayerRanking.objects.all().order_by("-points")
     serializer_class = PlayerRankingSerializer
 
 
