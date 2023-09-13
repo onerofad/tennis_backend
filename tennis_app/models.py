@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 class Signup (models.Model):
     fname = models.CharField(max_length=255, unique=True)
@@ -8,6 +9,7 @@ class Signup (models.Model):
     password = models.CharField(max_length=255, default="")
     nationality = models.CharField(max_length=255, default="")
     handbat = models.CharField(max_length=255, default="")
+    imageurl = models.TextField(default="")
 
     def __str__(self):
         return self.fname

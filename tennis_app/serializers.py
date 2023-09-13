@@ -4,7 +4,7 @@ from .models import Signup, PlayerRanking
 class SignupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Signup
-        fields = ('id', 'fname', 'lname', 'dob', 'email', 'password', 'nationality', 'handbat')
+        fields = ('id', 'fname', 'lname', 'dob', 'email', 'password', 'nationality', 'handbat', "imageurl")
 
 class PlayerRankingSerializer(serializers.ModelSerializer):
     class Meta:
