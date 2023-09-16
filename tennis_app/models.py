@@ -2,8 +2,8 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 class Signup (models.Model):
-    fname = models.CharField(max_length=255, unique=True)
-    lname = models.CharField(max_length=255, unique=True)
+    fname = models.CharField(max_length=255)
+    lname = models.CharField(max_length=255)
     dob =   models.DateField()
     email = models.CharField(max_length=255)
     password = models.CharField(max_length=255, default="")
@@ -21,7 +21,7 @@ class Signup (models.Model):
         return self.fname
     
 class PlayerRanking(models.Model):
-    firstname = models.ForeignKey(Signup, on_delete=models.CASCADE, to_field="fname")
+    firstname = models.ForeignKey(Signup, on_delete=models.CASCADE)
     leaguetype = models.CharField(max_length=255, default="")
     points = models.IntegerField()
 
