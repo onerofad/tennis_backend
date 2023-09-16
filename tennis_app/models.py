@@ -10,6 +10,12 @@ class Signup (models.Model):
     nationality = models.CharField(max_length=255, default="")
     handbat = models.CharField(max_length=255, default="")
     imageurl = models.TextField(default="")
+    currenteam = models.TextField(default="")
+    lastchamp = models.TextField(default="")
+    datelastchamp = models.DateField(default="2023-01-01")
+    locatelastchamp = models.TextField(default="")
+    favoriteplayer = models.TextField(default="")
+    
 
     def __str__(self):
         return self.fname
