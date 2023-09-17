@@ -15,7 +15,7 @@ class Signup (models.Model):
     datelastchamp = models.DateField(default="2023-01-01")
     locatelastchamp = models.TextField(default="")
     favoriteplayer = models.TextField(default="")
-    points = models.IntegerField(default=0)
+    points = models.IntegerField(default = 0)
     
 
     def __str__(self):
