@@ -4,7 +4,7 @@ from .models import Signup, PlayerRanking
 from .serializers import SignupSerializer, PlayerRankingSerializer
 
 class SignupView(viewsets.ModelViewSet):
-    queryset = Signup.objects.all()
+    queryset = Signup.objects.all().order_by("-points")
     serializer_class = SignupSerializer
 
 class PlayerRankingView(viewsets.ModelViewSet):
