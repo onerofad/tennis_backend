@@ -26,6 +26,10 @@ class PlayerRanking(models.Model):
     leaguetype = models.CharField(max_length=255, default="")
     points = models.IntegerField()
 
+class UploadImages(models.Model):
+    title =  models.TextField()
+    imageurl = CloudinaryField("image")
+
 
     
 
