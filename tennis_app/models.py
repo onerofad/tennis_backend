@@ -30,7 +30,7 @@ class UploadImages(models.Model):
     title =  models.TextField()
     imageurl = CloudinaryField("image")
 
-class uploadVideos(models.Model):
+class UploadTournamentVideos(models.Model):
     videodescription = models.TextField()
     videourl = models.TextField()
     
