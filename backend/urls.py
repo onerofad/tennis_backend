@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from tennis_app.views import SignupView, PlayerRankingView, UploadImagesView
+from tennis_app.views import SignupView, PlayerRankingView, UploadImagesView, UploadVideoView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,9 +26,7 @@ router = routers.DefaultRouter()
 router.register('signup', SignupView, 'signup')
 router.register('ranking', PlayerRankingView, 'ranking')
 router.register('uploadedimages', UploadImagesView, 'uploadedimages')
-
-
-
+router.register('uploadedvideos', UploadVideoView, 'uploadedvideos')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
