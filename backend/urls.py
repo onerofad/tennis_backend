@@ -27,7 +27,7 @@ router.register('signup', SignupView, 'signup')
 router.register('ranking', PlayerRankingView, 'ranking')
 router.register('uploadedimages', UploadImagesView, 'uploadedimages')
 router.register('uploadedtournamentvideos', UploadTournamentVideoView, 'uploadedtournamentvideos')
-router.register('uploadedhighlightvideos', UploadTournamentVideoView, 'uploadedhighlightvideos')
+router.register('uploadedhighlightvideos', UploadHighlightVideoView, 'uploadedhighlightvideos')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
