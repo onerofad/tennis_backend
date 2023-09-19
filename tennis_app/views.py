@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Signup, PlayerRanking, UploadImages, UploadTournamentVideos
-from .serializers import SignupSerializer, PlayerRankingSerializer, UploadImagesSerializer, UploadTournamentVideosSerializer
+from .models import Signup, PlayerRanking, UploadImages, UploadTournamentVideos, UploadHighlightVideos
+from .serializers import SignupSerializer, PlayerRankingSerializer, UploadImagesSerializer, UploadTournamentVideosSerializer, UploadHighlightVideosSerializer
 
 class SignupView(viewsets.ModelViewSet):
     queryset = Signup.objects.all().order_by("-points")
@@ -18,5 +18,11 @@ class UploadImagesView(viewsets.ModelViewSet):
 class UploadTournamentVideoView(viewsets.ModelViewSet):
     queryset = UploadTournamentVideos.objects.all()
     serializer_class = UploadTournamentVideosSerializer
+
+class UploadHighlightVideoView(viewsets.ModelViewSet):
+    queryset = UploadHighlightVideos.objects.all()
+    serializer_class = UploadHighlightVideosSerializer
+
+
 
 

@@ -33,6 +33,10 @@ class UploadImages(models.Model):
 class UploadTournamentVideos(models.Model):
     videodescription = models.TextField()
     videourl = models.TextField()
+
+class UploadHighlightVideos(models.Model):
+    videodescription = models.TextField()
+    videourl = models.TextField()
     
 
 
