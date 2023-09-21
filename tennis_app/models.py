@@ -41,6 +41,13 @@ class UploadHighlightVideos(models.Model):
 class UploadTeamVideos(models.Model):
     videodescription = models.TextField()
     videourl = models.TextField()
+
+class LatestNews(models.Model):
+    title = models.TextField()
+    description = models.TextField()
+    image = CloudinaryField("image")
+
+
     
 
 

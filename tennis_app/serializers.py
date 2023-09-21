@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Signup, PlayerRanking, UploadImages, UploadTournamentVideos, UploadHighlightVideos, UploadTeamVideos
+from .models import Signup, PlayerRanking, UploadImages, UploadTournamentVideos, UploadHighlightVideos, UploadTeamVideos, LatestNews
 
 class SignupSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,3 +30,8 @@ class UploadTeamVideosSerializer(serializers.ModelSerializer):
     class Meta:
         model = UploadTeamVideos
         fields = ("id", "videodescription" ,"videourl")
+
+class LatestNewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LatestNews
+        fields = ("id", "title" ,"description", "image")   
