@@ -47,6 +47,19 @@ class LatestNews(models.Model):
     description = models.TextField()
     image = CloudinaryField("image")
 
+class Results(models.Model):
+    player1 = models.CharField(max_length=255)
+    player1_first_set_score = models.IntegerField(default=0)
+    player1_second_set_score = models.IntegerField(default=0)
+    player1_third_set_score = models.IntegerField(default=0)
+
+    player2 = models.CharField(max_length=255)
+    player2_first_set_score = models.IntegerField(default=0)
+    player2_second_set_score = models.IntegerField(default=0)
+    player2_third_set_score = models.IntegerField(default=0)
+
+    
+
 
     
 
