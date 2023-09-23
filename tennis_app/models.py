@@ -59,15 +59,16 @@ class Results(models.Model):
     player2_third_set_score = models.IntegerField(default=0)
 
     RANKING_WEEK1 = 'RW1'
-    LEAGUE_WEEK1 = 'LW2'
-    LEAGUE_WEEK2 = 'LW3'
-    LEAGUE_WEEK3 = 'LW4'
+    LEAGUE_WEEK2 = 'LW2'
+    LEAGUE_WEEK3 = 'LW3'
+    LEAGUE_WEEK4 = 'LW4'
     SUPER4 = 'S4'
 
     RANKINGS = [
         (RANKING_WEEK1, 'Ranking Week 1'),
         (LEAGUE_WEEK2, 'League Week 2'),
         (LEAGUE_WEEK3, 'League Week 3'),
+        (LEAGUE_WEEK4, 'League Week 4'),
         (SUPER4, 'Super 4')
     ]
 
