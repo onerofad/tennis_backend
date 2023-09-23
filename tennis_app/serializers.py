@@ -39,5 +39,5 @@ class LatestNewsSerializer(serializers.ModelSerializer):
 class ResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = Results
-        fields = ("id", "player1" ,"player1_first_set_score", "player1_second_set_score", "player1_third_set_score", "player2", "player2_first_set_score", "player2_second_set_score", "player2_third_set_score")  
+        fields = ("id", "player1" ,"player1_first_set_score", "player1_second_set_score", "player1_third_set_score", "player2", "player2_first_set_score", "player2_second_set_score", "player2_third_set_score", "result_type")  
 
