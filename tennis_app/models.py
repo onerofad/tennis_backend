@@ -58,6 +58,21 @@ class Results(models.Model):
     player2_second_set_score = models.IntegerField(default=0)
     player2_third_set_score = models.IntegerField(default=0)
 
+    RANKING_WEEK1 = 'RW1'
+    LEAGUE_WEEK1 = 'LW2'
+    LEAGUE_WEEK2 = 'LW3'
+    LEAGUE_WEEK3 = 'LW4'
+    SUPER4 = 'S4'
+
+    RANKINGS = [
+        (RANKING_WEEK1, 'Ranking Week 1'),
+        (LEAGUE_WEEK2, 'League Week 2'),
+        (LEAGUE_WEEK3, 'League Week 3'),
+        (SUPER4, 'Super 4')
+    ]
+
+    result_type = models.CharField(max_length=10, choices=RANKINGS, default=RANKING_WEEK1)
+
     
 
 
