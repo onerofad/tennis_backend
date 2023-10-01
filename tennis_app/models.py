@@ -16,6 +16,7 @@ class Signup (models.Model):
     locatelastchamp = models.TextField(default="")
     favoriteplayer = models.TextField(default="")
     points = models.IntegerField(default = "0")
+    paid = models.CharField(max_length=255, default="no")
     
 
     def __str__(self):
