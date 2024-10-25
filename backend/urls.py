@@ -2,7 +2,7 @@
 URL configuration for backend project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -17,26 +17,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from tennis_app.views import SignupView, PlayerRankingView, UploadImagesView, UploadTournamentVideoView, UploadHighlightVideoView, UploadTeamVideoView, LatestNewsView, ResultView
+from tennis_app.views import RegisterView, ExchangeRatesView, TransactionView, PaymentMethodView, BankInfoView, RecepientView, TemporaryTransactionView, CountryView, RecentTransactionView
 from django.conf import settings
 from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
+router.register('register', RegisterView, 'register')
+router.register('rates', ExchangeRatesView, 'rate')
+router.register('transactions', TransactionView, 'transaction')
+router.register('recent_transactions', RecentTransactionView, 'recent_transaction')
+router.register('paymentmethod', PaymentMethodView, 'paymentmethods')
+router.register('bankinfo', BankInfoView, 'bankinformation')
+router.register('recepients', RecepientView, 'recepient')
+router.register('temporary_transactions', TemporaryTransactionView, 'temporary_transaction')
+router.register('country', CountryView, 'countries')
 
-router.register('signup', SignupView, 'signup')
-router.register('ranking', PlayerRankingView, 'ranking')
-router.register('uploadedimages', UploadImagesView, 'uploadedimages')
-router.register('uploadedtournamentvideos', UploadTournamentVideoView, 'uploadedtournamentvideos')
-router.register('uploadedhighlightvideos', UploadHighlightVideoView, 'uploadedhighlightvideos')
-router.register('uploadedteamvideos', UploadTeamVideoView, 'uploadedteamvideos')
-router.register('latestnews', LatestNewsView, 'latestnews')
-router.register('results', ResultView, 'results')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
-]
+    path('api/', include(router.urls)),
 
+]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

@@ -1,43 +1,52 @@
 from rest_framework import serializers
-from .models import Signup, PlayerRanking, UploadImages, UploadTournamentVideos, UploadHighlightVideos, UploadTeamVideos, LatestNews, Results
+from .models import Register, ExchangeRates, Transactions, PaymentMethod, BankInfo, Recepients, TemporaryTransactions, Country
 
-class SignupSerializer(serializers.ModelSerializer):
+import json
+
+class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Signup
-        fields = ('id', 'fname', 'lname', 'dob', 'email', 'password', 'nationality', 'handbat', "imageurl", "currenteam", "lastchamp", "datelastchamp", "locatelastchamp", "favoriteplayer", "points", "paid")
+        fields = '__all__'
+        model = Register
 
-class PlayerRankingSerializer(serializers.ModelSerializer):
+class ExchangeRatesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PlayerRanking
-        fields = ('id', 'firstname', 'leaguetype', 'points')
+        fields = '__all__'
+        model = ExchangeRates
 
-class UploadImagesSerializer(serializers.ModelSerializer):
+class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UploadImages
-        fields = ("id", "title", "imageurl")
+        fields = '__all__'
+        model = Transactions
 
-class UploadTournamentVideosSerializer(serializers.ModelSerializer):
+class RecepientSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UploadTournamentVideos
-        fields = ("id", "videodescription" ,"videourl")
+        fields = '__all__'
+        model = Transactions
 
-class UploadHighlightVideosSerializer(serializers.ModelSerializer):
+class PaymentMethodSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UploadHighlightVideos
-        fields = ("id", "videodescription" ,"videourl")
+        fields = '__all__'
+        model = PaymentMethod
 
-class UploadTeamVideosSerializer(serializers.ModelSerializer):
+class BankInfoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UploadTeamVideos
-        fields = ("id", "videodescription" ,"videourl")
+        fields = '__all__'
+        model = BankInfo
 
-class LatestNewsSerializer(serializers.ModelSerializer):
+class RecepientSerializer(serializers.ModelSerializer):
     class Meta:
-        model = LatestNews
-        fields = ("id", "title" ,"description", "image")  
+        fields = '__all__'
+        model = Recepients
 
-class ResultSerializer(serializers.ModelSerializer):
+class TemporaryTransactionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Results
-        fields = ("id", "player1" ,"player1_first_set_score", "player1_second_set_score", "player1_third_set_score", "player2", "player2_first_set_score", "player2_second_set_score", "player2_third_set_score", "result_type")  
+        fields = '__all__'
+        model = TemporaryTransactions
 
+class CountrySerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = Country
+
+
+      

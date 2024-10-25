@@ -1,39 +1,41 @@
-from django.shortcuts import render
+from .models import Register, ExchangeRates, Transactions, PaymentMethod, BankInfo, Recepients, TemporaryTransactions, Country
+from .serializers import RegisterSerializer, ExchangeRatesSerializer, TransactionSerializer, PaymentMethodSerializer, BankInfoSerializer, RecepientSerializer, TemporaryTransactionSerializer, CountrySerializer
 from rest_framework import viewsets
-from .models import Signup, PlayerRanking, UploadImages, UploadTournamentVideos, UploadHighlightVideos, UploadTeamVideos, LatestNews, Results
-from .serializers import SignupSerializer, PlayerRankingSerializer, UploadImagesSerializer, UploadTournamentVideosSerializer, UploadHighlightVideosSerializer, UploadTeamVideosSerializer, LatestNewsSerializer, ResultSerializer
+from datetime import date
 
-class SignupView(viewsets.ModelViewSet):
-    queryset = Signup.objects.all().order_by("-points")
-    serializer_class = SignupSerializer
+class RegisterView(viewsets.ModelViewSet):
+    queryset = Register.objects.all()
+    serializer_class = RegisterSerializer
 
-class PlayerRankingView(viewsets.ModelViewSet):
-    queryset = PlayerRanking.objects.all().order_by("-points")
-    serializer_class = PlayerRankingSerializer
+class ExchangeRatesView(viewsets.ModelViewSet):
+    queryset = ExchangeRates.objects.all()
+    serializer_class = ExchangeRatesSerializer
 
-class UploadImagesView(viewsets.ModelViewSet):
-    queryset = UploadImages.objects.all()
-    serializer_class = UploadImagesSerializer
+class TransactionView(viewsets.ModelViewSet):
+    queryset = Transactions.objects.all()
+    serializer_class = TransactionSerializer
 
-class UploadTournamentVideoView(viewsets.ModelViewSet):
-    queryset = UploadTournamentVideos.objects.all()
-    serializer_class = UploadTournamentVideosSerializer
+class RecentTransactionView(viewsets.ModelViewSet):
+    queryset = Transactions.objects.filter(trans_date = date.today())
+    serializer_class = TransactionSerializer
 
-class UploadHighlightVideoView(viewsets.ModelViewSet):
-    queryset = UploadHighlightVideos.objects.all()
-    serializer_class = UploadHighlightVideosSerializer
-
-class UploadTeamVideoView(viewsets.ModelViewSet):
-    queryset = UploadTeamVideos.objects.all()
-    serializer_class = UploadTeamVideosSerializer
-
-class LatestNewsView(viewsets.ModelViewSet):
-    queryset = LatestNews.objects.all()
-    serializer_class = LatestNewsSerializer
-
-class ResultView(viewsets.ModelViewSet):
-    queryset = Results.objects.all()
-    serializer_class = ResultSerializer
+class RecepientView(viewsets.ModelViewSet):
+    queryset = Recepients.objects.all()
+    serializer_class = RecepientSerializer
 
 
+class PaymentMethodView(viewsets.ModelViewSet):
+    queryset = PaymentMethod.objects.all()
+    serializer_class = PaymentMethodSerializer
 
+class BankInfoView(viewsets.ModelViewSet):
+    queryset = BankInfo.objects.all()
+    serializer_class = BankInfoSerializer
+
+class TemporaryTransactionView(viewsets.ModelViewSet):
+    queryset = TemporaryTransactions.objects.all()
+    serializer_class = TemporaryTransactionSerializer
+
+class CountryView(viewsets.ModelViewSet):
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
