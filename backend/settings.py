@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-f-bssdk4=b_v!%y1h4081%jf=!l&3l@pe750zv%ni_jqwnu$j3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'https://tennis-tournament.vercel.app/', 'https://abaplt.vercel.app/', 'https://www.abaptl.com/']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'https://moneyapp-frontend.vercel.app']
 
 
 # Application definition
@@ -148,9 +148,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
    'http://localhost:3000',
-   "https://tennis-tournament.vercel.app",
-   "https://abaplt.vercel.app",
-   "https://www.abaptl.com"
+   'https://moneyapp-frontend.vercel.app',
+   'http://localhost:8081',
+   'http://localhost:8082',
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
