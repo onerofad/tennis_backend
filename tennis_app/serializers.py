@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Register, ExchangeRates, Transactions, PaymentMethod, BankInfo, Recepients, TemporaryTransactions, Country
-
+from silasdk import User
+from silasdk import App
 import json
 
 class RegisterSerializer(serializers.ModelSerializer):
