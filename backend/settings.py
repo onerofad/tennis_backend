@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path, os
 import cloudinary
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,17 +88,20 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #    }
 #}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'u1jXiu57Lb4dqlZPoWfa',
-        'HOST': 'containers-us-west-185.railway.app',
-        'PORT':'7945'
-    }
-}
+#DATABASES = {
+#   'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'railway',
+#        'USER': 'postgres',
+#        'PASSWORD': 'u1jXiu57Lb4dqlZPoWfa',
+#        'HOST': 'containers-us-west-185.railway.app',
+#        'PORT':'7945'
+#   }
+#}
 
+DATABASES = {
+    'default': dj_database_url.parse(f'postgresql://postgres:gvaePnJIAooLjKpmxMsBMBAZLtOPTGGv@autorack.proxy.rlwy.net:50428/railway')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
