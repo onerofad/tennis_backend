@@ -49,5 +49,7 @@ class CountrySerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Country
 
+        print("hello")
+
 
       
