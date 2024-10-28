@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Register, ExchangeRates, Transactions, PaymentMethod, BankInfo, Recepients, TemporaryTransactions, Country
+from .models import Register, ExchangeRates, Transactions, PaymentMethod, BankInfo, Recepients, TemporaryTransactions, Country, SilaUser
 from silasdk import User
 from silasdk import App
 import json
@@ -49,7 +49,10 @@ class CountrySerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Country
 
-        print("hello")
+class SilaUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = SilaUser
 
 
       

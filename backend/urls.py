@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from tennis_app.views import RegisterView, ExchangeRatesView, TransactionView, PaymentMethodView, BankInfoView, RecepientView, TemporaryTransactionView, CountryView, RecentTransactionView
+from tennis_app.views import RegisterView, ExchangeRatesView, TransactionView, PaymentMethodView, BankInfoView, RecepientView, TemporaryTransactionView, CountryView, RecentTransactionView, SilaUserView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,6 +31,7 @@ router.register('bankinfo', BankInfoView, 'bankinformation')
 router.register('recepients', RecepientView, 'recepient')
 router.register('temporary_transactions', TemporaryTransactionView, 'temporary_transaction')
 router.register('country', CountryView, 'countries')
+router.register('sila_users', SilaUserView, 'sila_user')
 
 
 urlpatterns = [

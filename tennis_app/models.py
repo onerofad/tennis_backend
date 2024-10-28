@@ -177,6 +177,23 @@ class TemporaryTransactions(models.Model):
     currencyReceivedLabel = models.CharField(max_length=255, default='')
     trans_id = models.CharField(max_length=255, default=getRandom())
 
+class SilaUser(models.Model):
+  country = models.CharField(max_length=255)
+  user_handle = models.CharField(max_length=255) 
+  first_name = models.CharField(max_length=255)
+  last_name = models.CharField(max_length=255)
+  entity_name = models.CharField(max_length=255)
+  identity_value = models.CharField(max_length=255)
+  identity_alias = models.CharField(max_length=255, default='')
+  phone = models.CharField(max_length=255)
+  email = models.CharField(max_length=255)
+  address_alias = models.CharField(max_length=255, default='')
+  street_address_1 = models.CharField(max_length=255)
+  city = models.CharField(max_length=255)
+  state = models.CharField(max_length=255)
+  postal_code = models.CharField(max_length=255)
+  crypto_address = models.CharField(max_length=255)
+  birthdate = models.CharField(max_length=255)
 
 
     

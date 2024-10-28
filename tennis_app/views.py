@@ -1,5 +1,5 @@
-from .models import Register, ExchangeRates, Transactions, PaymentMethod, BankInfo, Recepients, TemporaryTransactions, Country
-from .serializers import RegisterSerializer, ExchangeRatesSerializer, TransactionSerializer, PaymentMethodSerializer, BankInfoSerializer, RecepientSerializer, TemporaryTransactionSerializer, CountrySerializer
+from .models import Register, ExchangeRates, Transactions, PaymentMethod, BankInfo, Recepients, TemporaryTransactions, Country, SilaUser
+from .serializers import RegisterSerializer, ExchangeRatesSerializer, TransactionSerializer, PaymentMethodSerializer, BankInfoSerializer, RecepientSerializer, TemporaryTransactionSerializer, CountrySerializer, SilaUserSerializer
 from rest_framework import viewsets
 from datetime import date
 
@@ -39,3 +39,7 @@ class TemporaryTransactionView(viewsets.ModelViewSet):
 class CountryView(viewsets.ModelViewSet):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
+
+class SilaUserView(viewsets.ModelViewSet):
+    queryset = SilaUser.objects.all()
+    serializer_class = SilaUserSerializer
