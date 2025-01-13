@@ -11,19 +11,14 @@ def getRandom():
     return random_number
 
 class Register(models.Model):
-    fname = models.CharField(max_length=255)
-    lname = models.CharField(max_length=255)
-    phone = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
-    address = models.TextField(default = '')
-    dob = models.DateField(default='2024-01-24')
     password = models.CharField(max_length=255)
     verify = models.IntegerField(default=0)
     email_notification = models.CharField(default="0", max_length=255)
     text_notification = models.CharField(default="0", max_length=255)
 
     def __str__(self):
-        return self.fname
+        return self.email
 
 class ExchangeRates(models.Model):
     country = models.CharField(max_length = 255)
@@ -188,7 +183,7 @@ class SilaUser(models.Model):
   phone = models.CharField(max_length=255)
   identity_value = models.CharField(max_length=255)
   street_address_1 = models.CharField(max_length=255)
-  street_address_2 = models.CharField(max_length=255, default="")
+  street_address_2 = models.CharField(max_length=255, default="None")
   city = models.CharField(max_length=255)
   state = models.CharField(max_length=255)
   country = models.CharField(max_length=255)
