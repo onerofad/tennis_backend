@@ -11,7 +11,10 @@ def getRandom():
     return random_number
 
 class Register(models.Model):
+    fname = models.CharField(max_length=255, default="")
+    lname = models.CharField(max_length=255, default="")
     email = models.CharField(max_length=255)
+    phone = models.CharField(max_length=255, default="")
     password = models.CharField(max_length=255)
     verify = models.IntegerField(default=0)
     email_notification = models.CharField(default="0", max_length=255)
