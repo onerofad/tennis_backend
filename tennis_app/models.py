@@ -15,6 +15,7 @@ class Register(models.Model):
     lname = models.CharField(max_length=255, default="")
     email = models.CharField(max_length=255)
     phone = models.CharField(max_length=255, default="")
+    dob = models.TextField(max_length=255, default='')
     password = models.CharField(max_length=255)
     verify = models.IntegerField(default=0)
     email_notification = models.CharField(default="0", max_length=255)
@@ -76,7 +77,7 @@ class Transactions(models.Model):
     trans_date = models.DateField(auto_now = True)
 
     status = models.CharField(max_length=255, default='Pending')
-    trans_id = models.CharField(max_length=255)
+    trans_id = models.CharField(max_length=255, default=getRandom())
 
     moneyRate = models.FloatField(default=0)
     currencySentLabel = models.CharField(max_length=255, default='')
